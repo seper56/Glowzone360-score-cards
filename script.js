@@ -1,72 +1,94 @@
-function createScorecard() {
-    var scorecard = [];
-    for (var hole = 1; hole <= 18; hole++) {
-      scorecard.push({
-        hole: hole,
-        par: 0,
-        scores: [0, 0, 0, 0]
-      });
+const holeCount = 18; // Total number of holes
+let players = ["Player 1", "Player 2", "Player 3", "Player 4"]; // Pre-defined players
+
+// Generate rows for each hole with pre-defined players
+generateScorecard();
+
+function generateScorecard() {
+  const scorecard = document.getElementById("scorecard");
+  const headerRow = document.createElement("tr");
+  headerRow.innerHTML = "<th>Hole</th><th>Par</th>";
+  for (let player of players) {
+    headerRow.innerHTML += `<th>${player}</th>`;
+  }
+  scorecard.appendChild(headerRow);
+
+  // Generate rows for each hole
+  for (let hole = 1; hole <= holeCount; hole++) {
+    const holeRow = document.createElement("tr");
+    holeRow.innerHTML = `<td>${hole}</td><td>3</td>`;
+    for (let i = 0; i < players.length; i++) {
+      holeRow.innerHTML += `
+        <td>
+          <input
+            type="number"
+            class="score-input"
+            min="0"
+            oninput="updateScore(this, ${i}, ${hole})"
+          />
+        </td>
+      `;
     }
-    return scorecard;
+    scorecard.appendChild(holeRow);
   }
-  
-  function updateScore(scorecard, hole, player, score) {
-    scorecard[hole - 1].scores[player - 1] = score;
+}
+
+function addPlayer() {
+  const playerName = document.getElementById("player-name").value.trim();
+
+  if (playerName === "") {
+    alert("Please enter a valid player name.");
+    return;
   }
-  
-  function calculateTotalScore(scorecard, player) {
-    var totalScore = scorecard.reduce(function (sum, hole) {
-      return sum + hole.scores[player - 1];
-    }, 0);
-    return totalScore;
+
+  players.push(playerName);
+  document.getElementById("player-name").value = "";
+
+  // Update scorecard with new player column
+  const scorecard = document.getElementById("scorecard");
+  const headerRow = scorecard.rows[0];
+  headerRow.innerHTML += `<th>${playerName}</th>`;
+
+  // Generate input cells for the new player
+  for (let hole = 1; hole <= holeCount; hole++) {
+    const inputCell = document.createElement("td");
+    inputCell.innerHTML = `
+      <input
+        type="number"
+        class="score-input"
+        min="0"
+        oninput="updateScore(this, ${players.length - 1}, ${hole})"
+      />
+    `;
+    scorecard.rows[hole].appendChild(inputCell);
   }
-  
-  function getWinner(scorecard) {
-    var players = ["Player 1", "Player 2", "Player 3", "Player 4"];
-    var scores = players.map(function (player, index) {
-      return calculateTotalScore(scorecard, index + 1);
-    });
-    var minScore = Math.min.apply(null, scores);
-    var winners = players.filter(function (_, index) {
-      return scores[index] === minScore;
-    });
-    return winners;
-  }
-  
-  function printScorecard(scorecard) {
-    console.log("Hole\tPar\tPlayer 1\tPlayer 2\tPlayer 3\tPlayer 4");
-    scorecard.forEach(function (holeData) {
-      var hole = holeData.hole;
-      var par = holeData.par;
-      var scores = holeData.scores.join("\t");
-      console.log(hole + "\t" + par + "\t" + scores);
-    });
-  }
-  
-  function playGame() {
-    var scorecard = createScorecard();
-    for (var hole = 1; hole <= 18; hole++) {
-      var par = parseInt(prompt("Enter par for Hole " + hole + ": "));
-      scorecard[hole - 1].par = par;
-      for (var player = 1; player <= 4; player++) {
-        while (true) {
-          var score = parseInt(prompt("Enter score for Hole " + hole + ", Player " + player + ": "));
-          if (!isNaN(score)) {
-            updateScore(scorecard, hole, player, score);
-            break;
-          } else {
-            alert("Invalid input. Please enter a number.");
-          }
-        }
-      }
+}
+
+function updateScore(input, playerIndex, hole) {
+  const score = parseInt(input.value);
+  // Do any additional validation or data processing here if needed
+  console.log(`Player: ${players[playerIndex]}, Hole: ${hole}, Score: ${score}`);
+  calculateTotalScores();
+}
+
+function calculateTotalScores() {
+  const totalScores = new Array(players.length).fill(0);
+
+  for (let hole = 1; hole <= holeCount; hole++) {
+    for (let i = 0; i < players.length; i++) {
+      const input = document.querySelector(`#scorecard tr:nth-child(${hole + 1}) td:nth-child(${i + 3}) input`);
+      const score = parseInt(input.value);
+      totalScores[i] += score;
     }
-    
-    console.log("\n-- Scorecard --");
-    printScorecard(scorecard);
-    var winners = getWinner(scorecard);
-    console.log("\nWinner(s): " + winners.join(", "));
   }
-  
-  // Start the game
-  playGame();
-  
+
+  for (let i = 0; i < players.length; i++) {
+    const totalScoreCell = document.querySelector(`#scorecard tr:last-child td:nth-child(${i + 3})`);
+    totalScoreCell.textContent = totalScores[i];
+  }
+
+  checkGameOver(totalScores);
+}
+
+function checkGameOver(totalScores) {
+  const gameOver = totalScores

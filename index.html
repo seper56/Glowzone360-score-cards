@@ -5,163 +5,34 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <h1>Mini Golf Scorecard</h1>
-  
-  <table>
-    <thead>
+  <div class="container">
+    <h1 class="title">Mini Golf Scorecard</h1>
+
+    <div class="player-input">
+      <input type="text" id="player-name" placeholder="Enter your name">
+      <button onclick="addPlayer()">Add Player</button>
+    </div>
+
+    <table id="scorecard">
       <tr>
         <th>Hole</th>
         <th>Par</th>
-        <th>Player 1</th>
-        <th>Player 2</th>
-        <th>Player 3</th>
-        <th>Player 4</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Repeat the following <tr> for each hole (1 to 18) -->
-      <tr>
-        <td class="hole-number">1</td>
-        <td><input type="number" class="par-input" min="1"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
+        <th colspan="4">Players</th>
       </tr>
       <tr>
-        <td class="hole-number">2</td>
-        <td><input type="number" class="par-input" min="1"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
+        <td></td>
+        <td></td>
+        <td>Player 1</td>
+        <td>Player 2</td>
+        <td>Player 3</td>
+        <td>Player 4</td>
       </tr>
-      <tr>
-        <td class="hole-number">3</td>
-        <td><input type="number" class="par-input" min="1"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-      </tr>
-      <tr>
-        <td class="hole-number">4</td>
-        <td><input type="number" class="par-input" min="1"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-      </tr>
-      <tr>
-        <td class="hole-number">5</td>
-        <td><input type="number" class="par-input" min="1"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-      </tr>
-      <tr>
-        <td class="hole-number">6</td>
-        <td><input type="number" class="par-input" min="1"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-      </tr>
-      <tr>
-        <td class="hole-number">7</td>
-        <td><input type="number" class="par-input" min="1"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-      </tr>
-      <tr>
-        <td class="hole-number">8</td>
-        <td><input type="number" class="par-input" min="1"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-      </tr>
-      <tr>
-        <td class="hole-number">9</td>
-        <td><input type="number" class="par-input" min="1"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-      </tr>    <tr>
-        <td class="hole-number">10</td>
-        <td><input type="number" class="par-input" min="1"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-      </tr>    <tr>
-        <td class="hole-number">1<1/td>
-        <td><input type="number" class="par-input" min="1"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-      </tr>    <tr>
-        <td class="hole-number">12</td>
-        <td><input type="number" class="par-input" min="1"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-      </tr>    <tr>
-        <td class="hole-number">13</td>
-        <td><input type="number" class="par-input" min="1"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-      </tr>    <tr>
-        <td class="hole-number">14</td>
-        <td><input type="number" class="par-input" min="1"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-      </tr>    <tr>
-        <td class="hole-number">15</td>
-        <td><input type="number" class="par-input" min="1"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-      </tr>    <tr>
-        <td class="hole-number">16</td>
-        <td><input type="number" class="par-input" min="1"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-      </tr>    <tr>
-        <td class="hole-number">17</td>
-        <td><input type="number" class="par-input" min="1"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-      </tr>    <tr>
-        <td class="hole-number">18</td>
-        <td><input type="number" class="par-input" min="1"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-        <td><input type="number" class="score-input" min="0"></td>
-      </tr>
-      <!-- Repeat for holes 2 to 18 -->
-    </tbody>
-  </table>
+    </table>
 
-  <button id="calculate-button">Calculate Winner</button>
-
-  <div id="winner"></div>
+    <div class="button-container">
+      <button onclick="resetScorecard()">Reset Scorecard</button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
