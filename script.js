@@ -1,26 +1,47 @@
-function calculateScores() {
-    var players = document.querySelectorAll('tr[id^="player"]');
-    var winner = null;
-    var lowestScore = Infinity;
+// Get the score inputs and total elements
+var scoreInputs = document.querySelectorAll('.score');
+var totalElements = document.querySelectorAll('.total');
 
-    for (var i = 0; i < players.length; i++) {
-        var player = players[i];
-        var playerName = player.querySelector('.player-name').value;
-        var totalScore = 0;
+// Attach event listeners to score inputs
+scoreInputs.forEach(function(input) {
+  input.addEventListener('input', updateScores);
+});
 
-        var scores = player.querySelectorAll('.score');
-        for (var j = 0; j < scores.length; j++) {
-            var score = parseInt(scores[j].value);
-            totalScore += score;
-        }
+function updateScores() {
+  // Iterate over the players
+  for (var i = 0; i < totalElements.length; i++) {
+    var totalScore = 0;
+    var scores = [];
 
-        player.querySelector('.total').textContent = totalScore;
-
-        if (totalScore < lowestScore) {
-            lowestScore = totalScore;
-            winner = playerName;
-        }
+    // Iterate over the score inputs for each player
+    for (var j = i; j < scoreInputs.length; j += totalElements.length) {
+      var score = parseInt(scoreInputs[j].value);
+      if (!isNaN(score)) {
+        scores.push(score);
+        totalScore += score;
+      }
     }
 
-    document.getElementById('winner').textContent = 'Winner: ' + winner;
+    // Update the total score for the player
+    totalElements[i].textContent = totalScore;
+  }
+}
+
+function calculateTotalScore() {
+  var players = document.querySelectorAll('.player-name');
+  var maxScore = -Infinity;
+  var winner = '';
+
+  // Iterate over the players
+  for (var i = 0; i < totalElements.length; i++) {
+    var totalScore = parseInt(totalElements[i].textContent);
+    if (totalScore > maxScore) {
+      maxScore = totalScore;
+      winner = players[i].value;
+    }
+  }
+
+  // Display the winner
+  var winnerElement = document.getElementById('winner');
+  winnerElement.textContent = 'Winner: ' + winner;
 }
