@@ -1,4 +1,8 @@
 
+.body{
+  font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+}
 /* Common styles for all screen sizes */
 table {
   border-collapse: collapse;
@@ -6,127 +10,118 @@ table {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-th, td {
-  border: 5px solid rgb(0, 0, 0);
-  padding: 8px;
+th,
+td {
+  border: 1px solid #000;
+  padding: 10px;
   text-align: center;
-}
-
-.input-container {
-  display: flex;
-  justify-content: center;
-}
-
-input[type="number"] {
-  width: 150px;
-  height: 50px;
 }
 
 .label {
   font-weight: bold;
 }
-
-.player-name input {
-  width: 100px;
-}
-
-.total {
-  font-weight: bold;
-  text-align: center;
-}
-
-#scorecard {
-  background-color: rgba(38, 14, 88, 0.5);
-  mix-blend-mode: multiply;
-}
-
-h1 {
-  text-align: center;
-  padding-top: 20px;
-}
-
-h2 {
-  text-align: center;
-  padding-top: 20px;
-  font-size: 18px;
-  color: #008000;
-}
-
-.center-container {
-  text-align: center;
-  padding-top: 20px;
-}
-
-/* Responsive styles for different screen sizes */
-@media screen and (max-width: 600px) {
+/* 
+Responsive styles for different screen sizes */
+/* @media screen and (max-width: 00px) {
   /* Styles for screens with a maximum width of 600px */
-  input[type="number"] {
+  /* input[type="number"] {
     width: 30px;
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   /* Styles for screens with a maximum width of 400px */
-  .player-name input {
+  /* .player-name input {
     width: 80px;
+  }
+} */ 
+/* Use a media query to add a break point at 800px: */
+@media screen and (max-width: 600px) {
+  .left, .main, .right {
+    width: 50%; /* The width is 100%, when the viewport is 800px or smaller */
   }
 }
 
 /* Your original table styles */
 table {
-  font-family: 'Arial';
+  font-family: 'Open Sans';
   margin: 25px auto;
   border-collapse: collapse;
-  border: 1px solid #eee;
-  border-bottom: 2px solid #00cccc;
-  box-shadow: 0px 0px 20px rgba(0,0,0,0.10),
-    0px 10px 20px rgba(0,0,0,0.05),
-    0px 20px 20px rgba(0,0,0,0.05),
-    0px 30px 20px rgba(0,0,0,0.05);
-  tr {
-    &:hover {
-      background: #f4f4f4;
+  border: 1px solid #ffffff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5),
+    0px 10px 20px rgba(0, 0, 0, 0.05),
+    0px 20px 20px rgba(0, 0, 0, 0.05),
+    0px 30px 20px rgba(0, 0, 0, 0.05);
+}
 
-      td {
-        color: #555;
-      }
-    }
-  }
-  th, td {
-    color: #999;
-    border: 1px solid #eee;
-    padding: 12px 35px;
-    border-collapse: collapse;
-  }
-  th {
-    background: #00cccc;
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 50px;
-    &.last {
-      border-right: none;
-    }
+table tr:hover {
+  background: #f4f4f4;
+  td {
+    color: #555;
   }
 }
-/* Add this CSS for the new row */
+
+table th,
+table td {
+  color: #999;
+  border: 1px solid #eee;
+  padding: 12px 35px;
+  border-collapse: collapse;
+  /* font-display: auto; */ 
+}
+
+table th {
+  background: #00cccc;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 50px;
+}
+
+table th.last {
+  border-right: none;
+}
+
 .par {
   font-weight: bold;
   text-align: center;
-  font-size: 40px;
+  font-size: 14px;
 }
 
 .label {
   font-weight: bold;
   text-align: center;
-  font-size: 40px;
+  font-size: 14px;
 }
 
-/* The rest of your CSS */
-/* Common styles for all screen sizes */
-table {
-  border-collapse: collapse;
-  margin: 0 auto;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+button {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 17px;
+  padding: 0.8em 1.3em 0.8em 0.9em;
+  color: white;
+  background: #58087c;
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  border: none;
+  letter-spacing: 0.05em;
+  border-radius: 16px;
 }
 
-/* ... (The rest of your CSS styles) ... */
+button svg {
+  margin-right: 3px;
+  transform: rotate(30deg);
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+button span {
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+button:hover svg {
+  transform: translateX(5px) rotate(90deg);
+}
+
+button:hover span {
+  transform: translateX(7px);
+}
