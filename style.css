@@ -20,11 +20,6 @@ td {
 .label {
   font-weight: bold;
 }
-@media screen and (max-width: 480px) {
-  .image-container img {
-    max-width: 80%;
-  }
-}
 
 /* 
 Responsive styles for different screen sizes */
