@@ -20,6 +20,12 @@ td {
 .label {
   font-weight: bold;
 }
+@media screen and (max-width: 480px) {
+  .image-container img {
+    max-width: 80%;
+  }
+}
+
 /* 
 Responsive styles for different screen sizes */
 /* @media screen and (max-width: 00px) {
@@ -36,11 +42,12 @@ Responsive styles for different screen sizes */
   }
 } */ 
 /* Use a media query to add a break point at 800px: */
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
   .left, .main, .right {
     width: 50%; /* The width is 100%, when the viewport is 800px or smaller */
-  }
-}
+  /* }
+} */ 
+
 
 /* Your original table styles */
 table {
@@ -84,13 +91,13 @@ table th.last {
 .par {
   font-weight: bold;
   text-align: center;
-  font-size: 14px;
+  font-size: 45px;
 }
 
 .label {
   font-weight: bold;
   text-align: center;
-  font-size: 14px;
+  font-size: 50px;
 }
 
 button {
@@ -125,3 +132,124 @@ button:hover svg {
 button:hover span {
   transform: translateX(7px);
 }
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px; /* Adjust the margin as needed */
+  max-width: 100%;
+  height: auto;
+}
+
+/* player names */
+.group {
+  position: relative;
+ }
+ 
+ .player-name {
+  font-size: 30px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 200px;
+  border: none;
+  border-bottom: 1px solid #515151;
+  background: transparent;
+ }
+ 
+ .player-name:focus {
+  outline: none;
+ }
+ 
+ label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+ }
+ 
+ .player-name:focus ~ label, .player-name:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #5264AE;
+ }
+ 
+ .bar {
+  position: relative;
+  display: block;
+  width: 200px;
+ }
+ 
+ .bar:before, .bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #5264AE;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+ }
+ 
+ .bar:before {
+  left: 50%;
+ }
+ 
+ .bar:after {
+  right: 50%;
+ }
+ 
+ .player-name:focus ~ .bar:before, .input:focus ~ .bar:after {
+  width: 50%;
+ }
+ 
+ .highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+ }
+ 
+ .player-name:focus ~ .highlight {
+  animation: inputHighlighter 0.3s ease;
+ }
+ 
+ @keyframes inputHighlighter {
+  from {
+   background: #5264AE;
+  }
+ 
+  to {
+   width: 0;
+   background: transparent;
+  }
+ }
+ /* score */
+.score {
+  border: none;
+  border-radius: 15px;
+  padding: 15px;
+  background-color: #e8e8e8;
+  box-shadow: 6px 6px 12px #ffffff,
+              -6px -6px 12px #c5c5c5;
+  font-size: medium;
+  font-weight: bold;
+  max-width: 200px;
+ }
+ 
+ .score:focus {
+  outline-color: white;
+  place-content: "Enter your message!";
+ }
+ .score {
+  text-align: center;
+  }
