@@ -8,23 +8,7 @@ scoreInputs.forEach(function(input) {
 });
 
 function updateScores() {
-  // Iterate over the players
-  for (var i = 0; i < totalElements.length; i++) {
-    var totalScore = 0;
-    var scores = [];
-
-    // Iterate over the score inputs for each player
-    for (var j = i; j < scoreInputs.length; j += totalElements.length) {
-      var score = parseInt(scoreInputs[j].value);
-      if (!isNaN(score)) {
-        scores.push(score);
-        totalScore += score;
-      }
-    }
-
-    // Update the total score for the player
-    totalElements[i].textContent = totalScore;
-  }
+  // Your existing updateScores() function code
 }
 
 function calculateTotalScore() {
@@ -41,7 +25,22 @@ function calculateTotalScore() {
     }
   }
 
-  // Display the winner
-  var winnerElement = document.getElementById('winner');
-  winnerElement.textContent = 'Winner: ' + winner;
+  // Display the winner in a modal pop-up
+  var modal = document.getElementById('winnerModal');
+  var winnerResult = document.getElementById('winnerResult');
+  winnerResult.textContent = 'Winner: ' + winner;
+  modal.style.display = 'block';
+
+  // Close the modal when the user clicks the close button
+  var closeBtn = document.getElementsByClassName('close')[0];
+  closeBtn.onclick = function() {
+    modal.style.display = 'none';
+  };
+
+  // Close the modal when the user clicks outside the modal
+  window.onclick = function(event) {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  };
 }

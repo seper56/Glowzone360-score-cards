@@ -1,65 +1,19 @@
-
-.body{
-  font-family: 'Open Sans', sans-serif;
-font-family: 'Roboto', sans-serif;
-}
-/* Common styles for all screen sizes */
-table {
-  border-collapse: collapse;
-  margin: 0 auto;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-th,
-td {
-  border: 1px solid #000;
-  padding: 10px;
-  text-align: center;
-}
-
-.label {
-  font-weight: bold;
-}
-
-/* 
-Responsive styles for different screen sizes */
-/* @media screen and (max-width: 00px) {
-  /* Styles for screens with a maximum width of 600px */
-  /* input[type="number"] {
-    width: 30px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  /* Styles for screens with a maximum width of 400px */
-  /* .player-name input {
-    width: 80px;
-  }
-} */ 
-/* Use a media query to add a break point at 800px: */
-/* @media screen and (max-width: 600px) {
-  .left, .main, .right {
-    width: 50%; /* The width is 100%, when the viewport is 800px or smaller */
-  /* }
-} */ 
-
-
-/* Your original table styles */
-table {
+ /* Your original table styles */
+ table {
   font-family: 'Open Sans';
   margin: 25px auto;
   border-collapse: collapse;
   border: 1px solid #ffffff;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5),
-    0px 10px 20px rgba(0, 0, 0, 0.05),
-    0px 20px 20px rgba(0, 0, 0, 0.05),
-    0px 30px 20px rgba(0, 0, 0, 0.05);
+      0px 10px 20px rgba(0, 0, 0, 0.05),
+      0px 20px 20px rgba(0, 0, 0, 0.05),
+      0px 30px 20px rgba(0, 0, 0, 0.05);
 }
 
 table tr:hover {
   background: #f4f4f4;
   td {
-    color: #555;
+      color: #555;
   }
 }
 
@@ -69,14 +23,13 @@ table td {
   border: 1px solid #eee;
   padding: 12px 35px;
   border-collapse: collapse;
-  /* font-display: auto; */ 
 }
 
 table th {
   background: #00cccc;
   color: #fff;
   text-transform: uppercase;
-  font-size: 50px;
+  font-size: 20px;
 }
 
 table th.last {
@@ -86,52 +39,20 @@ table th.last {
 .par {
   font-weight: bold;
   text-align: center;
-  font-size: 45px;
+  font-size: 30px;
 }
 
 .label {
   font-weight: bold;
   text-align: center;
-  font-size: 50px;
+  font-size: 20px;
 }
 
-button {
-  display: flex;
-  align-items: center;
-  font-family: inherit;
-  font-weight: 500;
-  font-size: 17px;
-  padding: 0.8em 1.3em 0.8em 0.9em;
-  color: white;
-  background: #58087c;
-  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-  border: none;
-  letter-spacing: 0.05em;
-  border-radius: 16px;
-}
-
-button svg {
-  margin-right: 3px;
-  transform: rotate(30deg);
-  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
-}
-
-button span {
-  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
-}
-
-button:hover svg {
-  transform: translateX(5px) rotate(90deg);
-}
-
-button:hover span {
-  transform: translateX(7px);
-}
 .image-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 150px; /* Adjust the margin as needed */
+  margin-top: 10px;
   max-width: 100%;
   height: auto;
 }
@@ -139,48 +60,50 @@ button:hover span {
 /* player names */
 .group {
   position: relative;
- }
- 
- .player-name {
-  font-size: 30px;
-  padding: 10px 10px 10px 5px;
+}
+
+.player-name {
+  font-size: 14px;
+  padding: 5px 5px 5px 2px;
   display: block;
-  width: 200px;
+  width: 100px;
   border: none;
   border-bottom: 1px solid #515151;
   background: transparent;
- }
- 
- .player-name:focus {
+}
+
+.player-name:focus {
   outline: none;
- }
- 
- label {
+}
+
+label {
   color: #999;
-  font-size: 18px;
+  font-size: 12px;
   font-weight: normal;
   position: absolute;
   pointer-events: none;
-  left: 5px;
-  top: 10px;
+  left: 2px;
+  top: 5px;
   transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
- }
- 
- .player-name:focus ~ label, .player-name:valid ~ label {
-  top: -20px;
-  font-size: 14px;
+}
+
+.player-name:focus ~ label,
+.player-name:valid ~ label {
+  top: -10px;
+  font-size: 10px;
   color: #5264AE;
- }
- 
- .bar {
+}
+
+.bar {
   position: relative;
   display: block;
-  width: 200px;
- }
- 
- .bar:before, .bar:after {
+  width: 100px;
+}
+
+.bar:before,
+.bar:after {
   content: '';
   height: 2px;
   width: 0;
@@ -190,61 +113,147 @@ button:hover span {
   transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
- }
- 
- .bar:before {
+}
+
+.bar:before {
   left: 50%;
- }
- 
- .bar:after {
+}
+
+.bar:after {
   right: 50%;
- }
- 
- .player-name:focus ~ .bar:before, .input:focus ~ .bar:after {
+}
+
+.player-name:focus ~ .bar:before,
+.input:focus ~ .bar:after {
   width: 50%;
- }
- 
- .highlight {
+}
+
+.highlight {
   position: absolute;
-  height: 60%;
-  width: 100px;
-  top: 25%;
+  height: 30%;
+  width: 50px;
+  top: 15%;
   left: 0;
   pointer-events: none;
   opacity: 0.5;
- }
- 
- .player-name:focus ~ .highlight {
+}
+
+.player-name:focus ~ .highlight {
   animation: inputHighlighter 0.3s ease;
- }
- 
- @keyframes inputHighlighter {
+}
+
+@keyframes inputHighlighter {
   from {
-   background: #5264AE;
+      background: #5264AE;
   }
- 
+
   to {
-   width: 0;
-   background: transparent;
+      width: 0;
+      background: transparent;
   }
- }
- /* score */
+}
+
+/* score */
 .score {
   border: none;
-  border-radius: 15px;
-  padding: 15px;
+  border-radius: 8px;
+  padding: 8px;
   background-color: #e8e8e8;
-  box-shadow: 6px 6px 12px #ffffff,
-              -6px -6px 12px #c5c5c5;
-  font-size: medium;
+  box-shadow: 6px 6px 12px #ffffff, -6px -6px 12px #c5c5c5;
+  font-size: 70px; /* Increase the font size as desired */
   font-weight: bold;
-  max-width: 200px;
- }
- 
- .score:focus {
+  max-width: 100px;
+}
+
+
+.score:focus {
   outline-color: white;
-  place-content: "Enter your message!";
- }
- .score {
+}
+
+.score {
   text-align: center;
+}
+
+/* Responsive styles for different screen sizes */
+@media only screen and (max-width: 768px) {
+  table {
+      font-size: 30px;
   }
+
+  .par,
+  .label {
+      font-size: 14px;
+  }
+
+  .player-name {
+      font-size: 12px;
+      width: 80px;
+  }
+
+  label {
+      font-size: 10px;
+  }
+
+  .score {
+      font-size: 12px;
+      max-width: 60px;
+  }
+
+  .image-container {
+      margin-top: 20px;
+  }
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden; /* Add overflow property */
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  button {
+      font-size: 14px;
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
