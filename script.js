@@ -42,7 +42,6 @@
         winner = players[i].value;
       }
     }
-
     // Display the winner
     var winnerElement = document.getElementById('winnerResult');
     winnerElement.textContent = 'Winner: ' + winner;
