@@ -1,47 +1,57 @@
-// Get the score inputs and total elements
-var scoreInputs = document.querySelectorAll('.score');
-var totalElements = document.querySelectorAll('.total');
+  // Existing code goes here...
 
-// Attach event listeners to score inputs
-scoreInputs.forEach(function(input) {
-  input.addEventListener('input', updateScores);
-});
+  // Get the score inputs and total elements
+  var scoreInputs = document.querySelectorAll('.score');
+  var totalElements = document.querySelectorAll('.total');
 
-function updateScores() {
-  // Iterate over the players
-  for (var i = 0; i < totalElements.length; i++) {
-    var totalScore = 0;
-    var scores = [];
+  // Attach event listeners to score inputs
+  scoreInputs.forEach(function(input) {
+    input.addEventListener('input', updateScores);
+  });
 
-    // Iterate over the score inputs for each player
-    for (var j = i; j < scoreInputs.length; j += totalElements.length) {
-      var score = parseInt(scoreInputs[j].value);
-      if (!isNaN(score)) {
-        scores.push(score);
-        totalScore += score;
+  function updateScores() {
+    // Iterate over the players
+    for (var i = 0; i < totalElements.length; i++) {
+      var totalScore = 0;
+      var scores = [];
+
+      // Iterate over the score inputs for each player
+      for (var j = i; j < scoreInputs.length; j += totalElements.length) {
+        var score = parseInt(scoreInputs[j].value);
+        if (!isNaN(score)) {
+          scores.push(score);
+          totalScore += score;
+        }
+      }
+
+      // Update the total score for the player
+      totalElements[i].textContent = totalScore;
+    }
+  }
+
+  function calculateTotalScore() {
+    var players = document.querySelectorAll('.player-name');
+    var maxScore = -Infinity;
+    var winner = '';
+
+    // Iterate over the players
+    for (var i = 0; i < totalElements.length; i++) {
+      var totalScore = parseInt(totalElements[i].textContent);
+      if (totalScore > maxScore) {
+        maxScore = totalScore;
+        winner = players[i].value;
       }
     }
 
-    // Update the total score for the player
-    totalElements[i].textContent = totalScore;
-  }
-}
+    // Display the winner
+    var winnerElement = document.getElementById('winnerResult');
+    winnerElement.textContent = 'Winner: ' + winner;
 
-function calculateTotalScore() {
-  var players = document.querySelectorAll('.player-name');
-  var maxScore = -Infinity;
-  var winner = '';
-
-  // Iterate over the players
-  for (var i = 0; i < totalElements.length; i++) {
-    var totalScore = parseInt(totalElements[i].textContent);
-    if (totalScore > maxScore) {
-      maxScore = totalScore;
-      winner = players[i].value;
-    }
+    var modal = document.getElementById('winnerModal');
+    modal.style.display = 'block';
   }
 
-  // Display the winner
-  var winnerElement = document.getElementById('winner');
-  winnerElement.textContent = 'Winner: ' + winner;
-}
+  function closeModal() {
+    var modal = document.getElementById('winnerModal');
+    modal.style.display = 'none';
+  }
