@@ -192,9 +192,12 @@
     </table>
 
     <button class="ui-btn" id="submitBtn" onclick="calculateTotalScore()">
-        <span>
-          Button
-        </span>
+        <div id="winnerModal" class="ui-btn">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 id="winnerResult"></h2>
+            </div>
+        </div>
       </button>
     <!-- <button id="submitBtn" onclick="calculateTotalScore()">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">

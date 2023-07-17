@@ -3,7 +3,7 @@
   // Get the score inputs and total elements
   var scoreInputs = document.querySelectorAll('.score');
   var totalElements = document.querySelectorAll('.total');
-
+ 
   // Attach event listeners to score inputs
   scoreInputs.forEach(function(input) {
     input.addEventListener('input', updateScores);
