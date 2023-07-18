@@ -242,7 +242,7 @@ label {
 
 /* button settings 👆 */
 
-.Calculate {
+.ui-btn {
   box-sizing: border-box;
   padding: var(--btn-padding);
   display: flex;
@@ -258,7 +258,7 @@ label {
   box-shadow: var(--btn-shadow);
 }
 
-.Calculate span {
+.ui-btn span {
   letter-spacing: var(--btn-letter-spacing);
   transition: var(--btn-transition);
   box-sizing: border-box;
@@ -266,22 +266,22 @@ label {
   background: inherit;
 }
 
-.Calculate span::before {
+.ui-btn span::before {
   box-sizing: border-box;
   position: absolute;
   content: "";
   background: inherit;
 }
 
-.Calculate:hover, .ui-btn:focus {
+.ui-btn:hover, .ui-btn:focus {
   background: var(--btn-hover-bg);
 }
 
-.Calculate:hover span, .ui-btn:focus span {
+.ui-btn:hover span, .ui-btn:focus span {
   color: var(--hover-btn-color);
 }
 
-.Calculate:hover span::before, .ui-btn:focus span::before {
+.ui-btn:hover span::before, .ui-btn:focus span::before {
   animation: chitchat linear both var(--btn-animation-duration);
 }
 
