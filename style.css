@@ -241,6 +241,11 @@ label {
 }
 
 /* button settings 👆 */
+/* Parent container for centering */
+.center-container {
+  display: flex;
+  justify-content: center;
+}
 
 .ui-btn {
   box-sizing: border-box;
