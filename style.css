@@ -1,3 +1,6 @@
+
+/* Your existing CSS code */
+
 table {
   font-family: 'Open Sans';
   margin: 25px auto;
@@ -127,20 +130,14 @@ label {
 
 /* Additional styles for scores */
 .score {
-  font-size: 50px;
-  max-width: 60px;
-}
-
-.score {
   border: none;
   border-radius: 8px;
-  padding: 30px;
+  padding: 8px;
   background-color: #e8e8e8;
   box-shadow: 6px 6px 12px #ffffff, -6px -6px 12px #c5c5c5;
-  font-size: 100px; /* Increase the font size as desired */
+  font-size: 70px; /* Increase the font size as desired */
   font-weight: bold;
-  max-width: 60px;
-  max-width: 60px;
+  max-width: 100px;
 }
 
 .score:focus {
@@ -263,7 +260,9 @@ label {
 .ui-btn span {
   letter-spacing: var(--btn-letter-spacing);
   transition: var(--btn-transition);
-  box-sizing: border
+  box-sizing: border-box;
+  position: relative;
+  background: inherit;
 }
 
 .ui-btn span::before {
@@ -284,6 +283,9 @@ label {
 .ui-btn:hover span::before, .ui-btn:focus span::before {
   animation: chitchat linear both var(--btn-animation-duration);
 }
+
+
+/* Additional styles you provided earlier for modals */
 
 @keyframes chitchat {
   0% {
