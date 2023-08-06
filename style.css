@@ -1,7 +1,5 @@
-
-/* Your existing CSS code */
-
-table {
+ /* Your original table styles */
+ table {
   font-family: 'Open Sans';
   margin: 25px auto;
   border-collapse: collapse;
@@ -19,9 +17,25 @@ table tr:hover {
   }
 }
 
-/* Rest of your existing CSS rules ... */
+table th,
+table td {
+  color: #999;
+  border: 1px solid #eee;
+  padding: 12px 35px;
+  border-collapse: collapse;
+}
 
-/* Additional styles provided earlier */
+table th {
+  background: #00cccc;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+table th.last {
+  border-right: none;
+}
+
 .par {
   font-weight: bold;
   text-align: center;
@@ -43,7 +57,7 @@ table tr:hover {
   height: auto;
 }
 
-/* Additional styles for player names */
+/* player names */
 .group {
   position: relative;
 }
@@ -128,7 +142,18 @@ label {
   animation: inputHighlighter 0.3s ease;
 }
 
-/* Additional styles for scores */
+@keyframes inputHighlighter {
+  from {
+      background: #5264AE;
+  }
+
+  to {
+      width: 0;
+      background: transparent;
+  }
+}
+
+/* score */
 .score {
   border: none;
   border-radius: 8px;
@@ -140,6 +165,7 @@ label {
   max-width: 100px;
 }
 
+
 .score:focus {
   outline-color: white;
 }
@@ -148,10 +174,34 @@ label {
   text-align: center;
 }
 
-/* Additional responsive styles for different screen sizes */
+/* Responsive styles for different screen sizes */
 @media only screen and (max-width: 768px) {
-  /* ... Your existing responsive styles ... */
-  /* ... Additional responsive styles ... */
+  table {
+      font-size: 30px;
+  }
+
+  .par,
+  .label {
+      font-size: 14px;
+  }
+
+  .player-name {
+      font-size: 12px;
+      width: 80px;
+  }
+
+  label {
+      font-size: 10px;
+  }
+
+  .score {
+      font-size: 12px;
+      max-width: 60px;
+  }
+
+  .image-container {
+      margin-top: 20px;
+  }
   .image-container {
     display: flex;
     justify-content: center;
@@ -172,49 +222,6 @@ label {
       font-size: 14px;
   }
 }
-
-/* Your existing CSS code */
-
-/* Modal styles */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  text-align: center; /* Center the content in the modal */
-}
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* Your existing CSS code */
-
-/* Button styles */
 .ui-btn {
   --btn-default-bg: rgb(41, 41, 41);
   --btn-padding: 15px 20px;
@@ -229,7 +236,7 @@ label {
   --font-size: 16px;
   /* 👆 this field should not be empty */
   --font-weight: 600;
-  --font-family: Menlo, Roboto Mono, monospace;
+  --font-family: Menlo,Roboto Mono,monospace;
   /* 👆 this field should not be empty */
 }
 
@@ -283,9 +290,6 @@ label {
 .ui-btn:hover span::before, .ui-btn:focus span::before {
   animation: chitchat linear both var(--btn-animation-duration);
 }
-
-
-/* Additional styles you provided earlier for modals */
 
 @keyframes chitchat {
   0% {
@@ -380,42 +384,4 @@ label {
     content: "";
     right: 0;
   }
-}
-
-/* Your existing CSS code */
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  text-align: center; /* Center the content in the modal */
-}
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
 }
