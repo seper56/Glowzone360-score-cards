@@ -127,6 +127,11 @@ label {
 
 /* Additional styles for scores */
 .score {
+  font-size: 50px;
+  max-width: 60px;
+}
+
+.score {
   border: none;
   border-radius: 8px;
   padding: 30px;
