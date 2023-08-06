@@ -16,25 +16,9 @@ table tr:hover {
   }
 }
 
-table th,
-table td {
-  color: #999;
-  border: 1px solid #eee;
-  padding: 12px 35px;
-  border-collapse: collapse;
-}
+/* Rest of your existing CSS rules ... */
 
-table th {
-  background: #00cccc;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 20px;
-}
-
-table th.last {
-  border-right: none;
-}
-
+/* Additional styles provided earlier */
 .par {
   font-weight: bold;
   text-align: center;
@@ -56,7 +40,7 @@ table th.last {
   height: auto;
 }
 
-/* player names */
+/* Additional styles for player names */
 .group {
   position: relative;
 }
@@ -141,29 +125,18 @@ label {
   animation: inputHighlighter 0.3s ease;
 }
 
-@keyframes inputHighlighter {
-  from {
-      background: #5264AE;
-  }
-
-  to {
-      width: 0;
-      background: transparent;
-  }
-}
-
-/* score */
+/* Additional styles for scores */
 .score {
   border: none;
   border-radius: 8px;
-  padding: 8px;
+  padding: 30px;
   background-color: #e8e8e8;
   box-shadow: 6px 6px 12px #ffffff, -6px -6px 12px #c5c5c5;
-  font-size: 70px; /* Increase the font size as desired */
+  font-size: 100px; /* Increase the font size as desired */
   font-weight: bold;
-  max-width: 100px;
+  max-width: 60px;
+  max-width: 60px;
 }
-
 
 .score:focus {
   outline-color: white;
@@ -173,34 +146,10 @@ label {
   text-align: center;
 }
 
-/* Responsive styles for different screen sizes */
+/* Additional responsive styles for different screen sizes */
 @media only screen and (max-width: 768px) {
-  table {
-      font-size: 30px;
-  }
-
-  .par,
-  .label {
-      font-size: 14px;
-  }
-
-  .player-name {
-      font-size: 12px;
-      width: 80px;
-  }
-
-  label {
-      font-size: 10px;
-  }
-
-  .score {
-      font-size: 12px;
-      max-width: 60px;
-  }
-
-  .image-container {
-      margin-top: 20px;
-  }
+  /* ... Your existing responsive styles ... */
+  /* ... Additional responsive styles ... */
   .image-container {
     display: flex;
     justify-content: center;
@@ -222,6 +171,48 @@ label {
   }
 }
 
+/* Your existing CSS code */
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  text-align: center; /* Center the content in the modal */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Your existing CSS code */
+
+/* Button styles */
 .ui-btn {
   --btn-default-bg: rgb(41, 41, 41);
   --btn-padding: 15px 20px;
@@ -236,7 +227,7 @@ label {
   --font-size: 16px;
   /* 👆 this field should not be empty */
   --font-weight: 600;
-  --font-family: Menlo,Roboto Mono,monospace;
+  --font-family: Menlo, Roboto Mono, monospace;
   /* 👆 this field should not be empty */
 }
 
@@ -267,9 +258,7 @@ label {
 .ui-btn span {
   letter-spacing: var(--btn-letter-spacing);
   transition: var(--btn-transition);
-  box-sizing: border-box;
-  position: relative;
-  background: inherit;
+  box-sizing: border
 }
 
 .ui-btn span::before {
