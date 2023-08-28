@@ -49,12 +49,17 @@ table th.last {
 }
 
 .image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* margin-top: 10px;
   max-width: 100%;
-  height: auto;
+  height: auto; */
+  position: relative;
+  top: 50%;
+  left: 50%;
+  tr
+  transform: translate(-50%, -50%);
 }
 
 /* player names */
